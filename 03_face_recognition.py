@@ -29,7 +29,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: example ==> Marcelo: id=1,  etc
-names = ['None', 'Yang', 'Jing', 'Peng', 'MaDong', 'W'] 
+names = ['None', 'Iron Man', 'Jing', 'Peng', 'Dong', 'W'] 
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -66,13 +66,6 @@ while True:
             if id == 'MaDong':
                 #isHide = 1
                 hide = 1
-                #if id == 'Yang':
-                    #isHide == 1
-                    #k.press_keys([k.windows_l_key,'d'])
-                    #k.press_key(k.alt_key)
-                    #k.tap_key(k.tab_key)
-                    #k.release_key(k.alt_key)
-                    #break
             confidence = "  {0}%".format(round(100 - confidence))
         else:
             id = "unknown"
@@ -83,31 +76,13 @@ while True:
     if hide == 1 and isHide == 0:
         print("hide")
         isHide = 1
-        
-        #k.press_keys([k.windows_l_key,'m'])
-        #k.press_keys([k.windows_l_key,'d'])
-        k.press_keys([k.windows_l_key,k.control_key,k.right_key])
-        #time.sleep(1)
-            #k.press_key(k.alt_key)
-            #k.tap_key(k.tab_key)
-            #k.release_key(k.alt_key)
-            #k.press_keys([k.windows_l_key,'d'])
-            #k.release_keys([k.windows_l_key,'d'])
-            
+		#如果你想在目标人脸出现时切换桌面放开下一行的注释，首先你需要先ctrl+win+d创建一个虚拟桌面
+        #k.press_keys([k.windows_l_key,k.control_key,k.right_key])
     elif hide == 0 and isHide == 1:
         print("show")
-        #time.sleep(1)
         isHide = 0
-        #k.press_keys([k.windows_l_key,k.shift_key,'m'])
-        #k.press_keys([k.windows_l_key,'d'])
-        k.press_keys([k.windows_l_key,k.control_key,k.left_key])
-            #print("show")
-            #k.press_key(k.alt_key)
-            #k.tap_key(k.tab_key)
-            #k.release_key(k.alt_key)
-            #k.press_keys([k.windows_l_key,'d'])
-            #k.release_keys([k.windows_l_key,'d'])
-            
+		#如果你想在目标人脸离开时回到原来的桌面放开下一行的注释
+        #k.press_keys([k.windows_l_key,k.control_key,k.left_key])
     cv2.imshow('camera',img) 
 
     key = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
