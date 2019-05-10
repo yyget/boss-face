@@ -1,2 +1,2 @@
 # boss-face
-when your boss appear the win10 swap to the work desktop
+参考 https://www.hackster.io/mjrobot/real-time-face-recognition-an-end-to-end-project-a10826 
